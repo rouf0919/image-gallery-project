@@ -32,7 +32,7 @@ export default function RootLayout({
         <Header />
 
         {/* Page Content */}
-        <main className="my-3">{children}</main>
+        <main className="my-2">{children}</main>
 
         {/* Optional Footer */}
         <Footer />
