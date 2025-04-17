@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="border-b sticky top-0 bg-white z-10">
+    <header className="border-b sticky top-0 bg-white z-10 ">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <div className="font-bold text-xl">AppLogo</div>

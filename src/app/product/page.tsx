@@ -292,7 +292,7 @@ const Home = () => {
               <h3 className="text-sm text-gray-600">Color</h3>
               <fieldset className="mt-2">
                 <legend className="sr-only">Choose a color</legend>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   {product.colors.map((color) => (
                     <label
                       key={color.name}
