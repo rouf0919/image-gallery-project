@@ -7,116 +7,42 @@ interface FooterLink {
   text: string;
 }
 
-interface SocialLink {
-  href: string;
-
-  label: string;
-}
-
-interface ContactInfo {
-  icon: string;
-  text: string;
-}
-
 const Footer: FC = () => {
-  // Data for reusable components
-  const quickLinks: FooterLink[] = [
-    { href: "#", text: "Home" },
-    { href: "#", text: "About Us" },
-    { href: "#", text: "Services" },
-    { href: "#", text: "Portfolio" },
-    { href: "#", text: "Contact" },
+  const shopLinks: FooterLink[] = [
+    { href: "#", text: "Men" },
+    { href: "#", text: "Women" },
+    { href: "#", text: "Kids" },
+    { href: "#", text: "New Arrivals" },
+    { href: "#", text: "Sale" },
   ];
 
-  const socialLinks: SocialLink[] = [
-    {
-      href: "#",
-      label: "Facebook",
-    },
-    {
-      href: "#",
-      label: "Instagram",
-    },
-    {
-      href: "#",
-      label: "Twitter",
-    },
+  const supportLinks: FooterLink[] = [
+    { href: "#", text: "Help Center" },
+    { href: "#", text: "Shipping & Returns" },
+    { href: "#", text: "Order Status" },
+    { href: "#", text: "Contact Us" },
   ];
 
-  const contactInfo: ContactInfo[] = [
-    { icon: "📍", text: "123 Street Name, City, Country" },
-    { icon: "📞", text: "+1 234 567 8900" },
-    { icon: "✉️", text: "info@example.com" },
+  const socialLinks: FooterLink[] = [
+    { href: "#", text: "Facebook" },
+    { href: "#", text: "Instagram" },
+    { href: "#", text: "Twitter" },
   ];
 
   return (
-    <footer className="bg-white border-t">
-      <div className="container mx-auto px-4 py-8">
-        {/* Gallery Grid */}
-        <div className="mb-8">
-          <h3 className="text-lg font-medium mb-4">Latest Photos</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }).map((_, index) => (
-              <div
-                key={index}
-                className="relative aspect-video overflow-hidden rounded-md"
-              >
-                <Image
-                  src={`/placeholder.svg?height=150&width=250&text=Image${
-                    index + 1
-                  }`}
-                  alt={`Footer gallery image ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+    <footer className="bg-gray-50 border-t mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
-        {/* Search Bar */}
-        <div className="flex space-x-2 max-w-md mb-8">
-          <input
-            placeholder="Search..."
-            className="bg-white border border-gray-300 rounded-md px-4 py-2 flex-grow focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-          />
-          <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors">
-            Search
-          </button>
-        </div>
-
-        {/* Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-t border-b">
-          {/* About Company */}
+          {/* Shop */}
           <div>
-            <h4 className="font-medium mb-4">About Company</h4>
-            <p className="text-gray-600 mb-4">
-              We provide high-quality images and resources for your creative
-              projects.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-gray-600 hover:text-primary transition-colors"
-                  aria-label={link.label}
-                >
-                  Icon
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-medium mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4 text-gray-800">Shop</h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
+              {shopLinks.map((link) => (
                 <li key={link.text}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-primary transition-colors"
+                    className="text-gray-600 hover:text-black transition"
                   >
                     {link.text}
                   </Link>
@@ -125,26 +51,66 @@ const Footer: FC = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Support */}
           <div>
-            <h4 className="font-medium mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-gray-600">
-              {contactInfo.map((info, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="mr-2">{info.icon}</span>
-                  <span>{info.text}</span>
+            <h4 className="font-semibold mb-4 text-gray-800">Support</h4>
+            <ul className="space-y-2">
+              {supportLinks.map((link) => (
+                <li key={link.text}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 hover:text-black transition"
+                  >
+                    {link.text}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="font-semibold mb-4 text-gray-800">Subscribe</h4>
+            <p className="text-gray-600 mb-4 text-sm">
+              Sign up to receive updates on new arrivals, special offers and other discount information.
+            </p>
+            <div className="flex space-x-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="flex-1 border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
+              />
+              <button className="bg-black text-white px-4 py-2 rounded-md text-sm hover:bg-gray-800 transition">
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h4 className="font-semibold mb-4 text-gray-800">Follow Us</h4>
+            <div className="flex space-x-4">
+              {socialLinks.map((link) => (
+                <Link
+                  key={link.text}
+                  href={link.href}
+                  className="text-gray-600 hover:text-black transition"
+                  aria-label={link.text}
+                >
+                  {link.text}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Copyright */}
-        <div className="pt-4 text-center text-gray-600 text-sm">
-          <p>© {new Date().getFullYear()} Your Company. All rights reserved.</p>
+        {/* Divider */}
+        <div className="border-t mt-10 pt-6 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Your E-Commerce Brand. All rights reserved.
         </div>
       </div>
     </footer>
   );
 };
+
 export default Footer;
