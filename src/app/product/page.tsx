@@ -340,7 +340,7 @@ const Home = () => {
                   {product.sizes.map((size) => (
                     <label
                       key={size.name}
-                      className={`relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none ${
+                      className={`relative flex items-center justify-center rounded-md ring py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none ${
                         size.inStock
                           ? 'cursor-pointer bg-white text-gray-900 shadow-sm'
                           : 'cursor-not-allowed bg-gray-50 text-gray-200'
